@@ -1,2 +1,10 @@
-# algorithms_and_data_structures
-Algorithms and Data Structures
+# Algorithms and Data Structures
+
+## Build
+
+``
+mkdir build
+cd build
+cmake ..
+make
+``
