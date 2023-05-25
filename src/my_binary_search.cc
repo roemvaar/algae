@@ -1,4 +1,4 @@
-// #include "my_binary_search.h"
+#include "my_binary_search.h"
 
 #include <iostream>
 #include <vector>
