@@ -27,16 +27,3 @@ int binary_search(std::vector<int>& nums, int target)
 
     return index;
 }
-
-int main()
-{
-    std::vector<int> nums{5, 8, 10, 12, 15, 22};
-    int target = 22;
-    int index;
-
-    index = binary_search(nums, target);
-
-    std::cout << "Target at: " << index << " index" << std::endl;
-
-    return 0;
-}
