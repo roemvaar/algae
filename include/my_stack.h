@@ -13,8 +13,8 @@
  * 
  * The underlying container may be any standard container
  * class templates. The container shall support the following
- * operations: empty, size, back, push_back, pop_back
- * 
+ * operations: empty, size, back, push_back, pop_back.
+ *  
  * For this implemenation std::vector<int> is used.
  */
 
@@ -28,9 +28,7 @@ public:
     int size();
     int top();
     void push(int elem);
-    // emplace
     int pop();
-    // swap - TODO: Check cplusplus stl implementation
 private:
     std::vector<int> stack_vector;
     int top_elem;

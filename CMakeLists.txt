@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
 
+enable_testing()
+
 add_subdirectory(include)
 add_subdirectory(src)
 add_subdirectory(test)

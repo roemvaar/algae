@@ -6,7 +6,7 @@
 |:----------------------:|:------------------:|:----------------------:|
 |      Linked Lists      | Bread-First Search |    Bit Manipulation    |
 | Trees, Tries, & Graphs | Depth-First Search | Memory (Stack vs Heap) |
-|     Stacks & Queues    |  **Binary Search** |        Recursion       |
+|     **Stacks** & Queues    |  **Binary Search** |        Recursion       |
 |          Heaps         |     Merge Sort     |   Dynamic Programming  |
 |         Vectors        |     Quick Sort     |   Big O Time & Space   |
 |       Hash Tables      |                    |                        |
