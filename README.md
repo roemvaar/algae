@@ -11,17 +11,16 @@
 |         Vectors        |     Quick Sort     |   Big O Time & Space   |
 |       Hash Tables      |                    |                        |
 
-## Building
+## Build
 
 ```
-$ mkdir build && cd build
-$ cmake ..
-$ make
+$ cmake -B build
+$ cmake --build build
 ```
 
-## Testing
+## Test
 
 ```
-$ cd build/test
+$ cd build
 $ ctest
 ```
