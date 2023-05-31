@@ -5,23 +5,9 @@
 #include "my_binary_search.h"
 #include "my_stack.h"
 
-int main_binary_search();
 int main_stack();
 int main_stack_stl();
 int main_queue();
-
-int main_binary_search()
-{
-    std::vector<int> nums{5, 8, 10, 12, 15, 22};
-    int target = 22;
-    int index;
-
-    index = binary_search(nums, target);
-
-    std::cout << "Target at: " << index << " index" << std::endl;
-
-    return 0;
-}
 
 int main_stack()
 {
@@ -82,13 +68,14 @@ int main_stack_stl()
 int main_queue()
 {
     std::cout << "Main queue" << std::endl;
+
+    return 0;
 }
 
 int main()
 {
     std::cout << "Algorithms and Data Structures Implementation in C++" << std::endl;
 
-    // main_binary_search();
     // main_stack();
     // main_stack_stl();
     main_queue();

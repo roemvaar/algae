@@ -6,6 +6,11 @@
 int binary_search(std::vector<int>& nums, int target)
 {
     int n = nums.size();
+
+    if (n == 0) {
+        return -1;
+    }
+
     int left = 0;
     int right = n - 1;
     int index = -1;

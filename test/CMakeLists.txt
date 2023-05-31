@@ -14,8 +14,8 @@ FetchContent_MakeAvailable(googletest)
 
 # Add a testing executable
 add_executable(${PROJECT_NAME}
-    test_my_binary_search.cc
-    test_main.cc
+    my_binary_search_unittest.cc
+    my_stack_unittest.cc
 )
 
 target_link_libraries(${PROJECT_NAME}
