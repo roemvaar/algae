@@ -8,6 +8,10 @@
  */
 MyQueue::MyQueue()
 {
+    queue_vector.resize(max_size);
+    q_size = 0;
+    head = 0;
+    tail = 0;
 }
 
 /*
@@ -16,7 +20,11 @@ MyQueue::MyQueue()
  */
 bool MyQueue::empty()
 {
-    return true;
+    bool is_empty;
+
+    is_empty = (q_size == 0) ? true : false;
+
+    return is_empty;
 }
 
 /*
@@ -25,7 +33,7 @@ bool MyQueue::empty()
  */
 int MyQueue::size()
 {
-    return 0;
+    return q_size;
 }
 
 /*
@@ -34,16 +42,16 @@ int MyQueue::size()
  */
 int MyQueue::front()
 {
-    return 0;
+    return queue_vector[head];
 }
 
 /*
  * back
  * Access last element
  */
-void MyQueue::back()
+int MyQueue::back()
 {
-    return;
+    return queue_vector[tail - 1];
 }
 
 /*
@@ -52,7 +60,16 @@ void MyQueue::back()
  */
 void MyQueue::enqueue(int elem)
 {
+    queue_vector[tail] = elem;
 
+    if (tail == max_size) {
+        tail = 0;
+    }
+    else {
+        tail++;
+    }
+
+    q_size++;
 }
 
 /*
@@ -61,5 +78,16 @@ void MyQueue::enqueue(int elem)
  */
 int MyQueue::dequeue()
 {
-    return 0;
+    int elem = queue_vector[head];
+
+    if (head == max_size) {
+        head = 0;
+    }
+    else {
+        head++;
+    }
+
+    q_size--;
+
+    return elem;
 }

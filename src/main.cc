@@ -1,73 +1,79 @@
 #include <iostream>
-#include <stack>
-#include <vector>
+#include <queue>
 
-#include "my_binary_search.h"
-#include "my_stack.h"
+#include "my_queue.h"
 
-int main_stack();
-int main_stack_stl();
-int main_queue();
-
-int main_stack()
+void showq(std::queue<int> gq)
 {
-    MyStack stack;
+    std::queue<int> g = gq;
 
-    stack.push(21);
-    stack.push(22);
-    stack.push(23);
-    stack.push(24);
-    stack.push(25);
-
-    int num = 0;
-    stack.push(num);
-    stack.pop();
-    stack.pop();
-    stack.pop();
-
-    std::cout << "My Stack: ";
-
-    while(!stack.empty()) {
-        std::cout << stack.top() << " ";
-        stack.pop();
+    while (!g.empty()) {
+        std::cout << " " << g.front();
+        g.pop();
     }
-
-    std::cout << std::endl;
-
-    return 0;
 }
 
-int main_stack_stl()
+void show_queue(MyQueue queue)
 {
-    std::stack<int> stack;
+    MyQueue q = queue;
 
-    stack.push(21);
-    stack.push(22);
-    stack.push(23);
-    stack.push(24);
-    stack.push(25);
-
-    int num = 0;
-    stack.push(num);
-    stack.pop();
-    stack.pop();
-    stack.pop();
-
-    std::cout << "STL Stack: ";
-
-    while(!stack.empty()) {
-        std::cout << stack.top() << " ";
-        stack.pop();
+    while (!q.empty()) {
+        std::cout << " " << q.front();
+        q.dequeue();
     }
-
-    std::cout << std::endl;
-
-    return 0;
 }
 
 int main_queue()
 {
     std::cout << "Main queue" << std::endl;
+
+    MyQueue queue;
+
+    queue.enqueue(10);
+    queue.enqueue(20);
+    queue.enqueue(30);
+    queue.enqueue(40);
+    queue.enqueue(50);
+
+    std::cout << "The queue is:";
+    show_queue(queue);
+    std::cout << std::endl;
+    std::cout << "queue.size(): " << queue.size() << std::endl;
+    std::cout << "queue.front(): " << queue.front() << std::endl;
+    std::cout << "queue.back(): " << queue.back() << std::endl;
+    std::cout << "queue.dequeu() twice" << std::endl;
+    queue.dequeue();
+    queue.dequeue();
+    std::cout << "Updated queue is:";
+    show_queue(queue);
+    std::cout << std::endl;
+
+    return 0;
+}
+
+int main_queue_stl()
+{
+    std::cout << "Main queue STL" << std::endl;
+
+    std::queue<int> gquiz;
+    gquiz.push(10);
+    gquiz.push(20);
+    gquiz.push(30);
+    gquiz.push(40);
+    gquiz.push(50);
+ 
+    std::cout << "The queue gquiz is:";
+    showq(gquiz);
+    std::cout << std::endl;
+    std::cout << "gquiz.size(): " << gquiz.size() << std::endl;
+    std::cout << "gquiz.front(): " << gquiz.front() << std::endl;
+    std::cout << "gquiz.back(): " << gquiz.back() << std::endl;
+    std::cout << "gquiz.pop() twice" << std::endl;
+    gquiz.pop();
+    gquiz.pop();
+    std::cout << "Updated queue gquiz is:";
+    showq(gquiz);
+    std::cout << std::endl;
 
     return 0;
 }
@@ -76,9 +82,8 @@ int main()
 {
     std::cout << "Algorithms and Data Structures Implementation in C++" << std::endl;
 
-    // main_stack();
-    // main_stack_stl();
     main_queue();
+    main_queue_stl();
 
     return 0;
 }

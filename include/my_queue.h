@@ -28,12 +28,13 @@ public:
     MyQueue();
     bool empty();
     int size();
-    int front();
-    void back();
+    int front(); 
+    int back();
     void enqueue(int elem);
     int dequeue();
 private:
     std::vector<int> queue_vector;
+    int q_size;
     int head;
     int tail;
     const int max_size = 100;
