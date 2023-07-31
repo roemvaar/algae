@@ -15,6 +15,7 @@ FetchContent_MakeAvailable(googletest)
 # Add a testing executable
 add_executable(${PROJECT_NAME}
     my_binary_search_unittest.cc
+    my_heap_unittest.cc
     my_stack_unittest.cc
 )
 

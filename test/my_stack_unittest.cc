@@ -6,7 +6,9 @@ namespace {
 
 TEST(StackTests, emptyStack)
 {
-    EXPECT_EQ(7 * 6, 42);
+    MyStack *stack;
+
+    EXPECT_EQ(stack->empty(), 0);
 }
 
 TEST(StackTests, pushElementOnce)
@@ -31,7 +33,9 @@ TEST(StackTests, popElementTwice)
 
 TEST(StackTests, popEmpty)
 {
-    EXPECT_EQ(7 * 6, 42);
+    MyStack *stack;
+
+    EXPECT_EQ(stack->pop(), 0);
 }
 
 }

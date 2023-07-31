@@ -8,6 +8,7 @@
  */
 MyStack::MyStack()
 {
+    stack_vector.resize(max_size);
     top_elem = -1;
 }
 
@@ -61,11 +62,6 @@ void MyStack::push(int elem)
 }
 
 /*
- * emplace
- * Construct and insert element
- */
-
-/*
  * pop
  * Remove top element
  */
@@ -74,7 +70,7 @@ int MyStack::pop()
     int elem = -1;
 
     if (this->empty()) {
-        std::cout << "Error - Stack Underflow" << std::endl;
+        std::cerr << "Error - Stack Underflow" << std::endl;
     }
     else {
         elem = stack_vector[top_elem];
@@ -83,8 +79,3 @@ int MyStack::pop()
 
     return elem;
 }
-
-/*
- * swap
- * Swap contents
- */
