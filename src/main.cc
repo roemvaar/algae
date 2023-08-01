@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <queue>
 
@@ -78,12 +79,31 @@ int main_queue_stl()
     return 0;
 }
 
+int main_binary_search()
+{
+    std::vector<int> haystack {1,2,3,4,5,9};
+    std::vector<int> needles {1,2,3};
+
+    for (auto needle : needles) {
+        std::cout << "Searching for " << needle << std::endl;
+
+        if (std::binary_search(haystack.begin(), haystack.end(), needle)) {
+            std::cout << "Found" << needle << "\n";
+        }
+        else {
+            std::cout << "no dice!" << std::endl;
+        }
+    }
+}
+
 int main()
 {
     std::cout << "Algorithms and Data Structures Implementation in C++" << std::endl;
 
-    main_queue();
-    main_queue_stl();
+    // main_queue();
+    // main_queue_stl();
+
+    main_binary_search();
 
     return 0;
 }
