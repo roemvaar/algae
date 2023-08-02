@@ -1,10 +1,10 @@
-#include "my_heap.h"
+#include "my_graph.h"
 
 #include <gtest/gtest.h>
 
 namespace {
 
-TEST(MyHeapTests, emptyHeap)
+TEST(MyGraphTests, template)
 {
     EXPECT_EQ(false, true);
 }

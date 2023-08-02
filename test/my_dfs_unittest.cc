@@ -1,10 +1,10 @@
-#include "my_heap.h"
+#include "my_dfs.h"
 
 #include <gtest/gtest.h>
 
 namespace {
 
-TEST(MyHeapTests, emptyHeap)
+TEST(MyDFSTests, template)
 {
     EXPECT_EQ(false, true);
 }

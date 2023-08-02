@@ -1,10 +1,10 @@
-#include "my_heap.h"
+#include "my_queue.h"
 
 #include <gtest/gtest.h>
 
 namespace {
 
-TEST(MyHeapTests, emptyHeap)
+TEST(MyQueueTests, template)
 {
     EXPECT_EQ(false, true);
 }

@@ -1,10 +1,10 @@
-#include "my_heap.h"
+#include "my_bfs.h"
 
 #include <gtest/gtest.h>
 
 namespace {
 
-TEST(MyHeapTests, emptyHeap)
+TEST(MyBFSTests, template)
 {
     EXPECT_EQ(false, true);
 }

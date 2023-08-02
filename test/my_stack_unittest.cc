@@ -13,7 +13,11 @@ TEST(StackTests, emptyStack)
 
 TEST(StackTests, pushElementOnce)
 {
-    EXPECT_EQ(7 * 6, 42);
+    MyStack *stack;
+
+    stack->push(5);
+
+    EXPECT_EQ(5, stack->top());
 }
 
 TEST(StackTests, pushElementTwice)

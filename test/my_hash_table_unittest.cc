@@ -1,10 +1,10 @@
-#include "my_heap.h"
+#include "my_hash_table.h"
 
 #include <gtest/gtest.h>
 
 namespace {
 
-TEST(MyHeapTests, emptyHeap)
+TEST(MyHashTableTests, template)
 {
     EXPECT_EQ(false, true);
 }
