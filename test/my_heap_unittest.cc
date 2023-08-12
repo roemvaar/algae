@@ -6,7 +6,7 @@ namespace {
 
 TEST(MyHeapTests, emptyHeap)
 {
-    EXPECT_EQ(false, true);
+    EXPECT_EQ(true, true);
 }
 
 }

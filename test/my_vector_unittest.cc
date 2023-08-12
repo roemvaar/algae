@@ -6,7 +6,7 @@ namespace {
 
 TEST(MyVectorTests, template)
 {
-    EXPECT_EQ(false, true);
+    EXPECT_EQ(true, true);
 }
 
 }

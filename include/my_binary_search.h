@@ -19,10 +19,14 @@
 
 /*
  * The elements are compared using operator "<"
- * template< class ForwardIt, class T>
+ * template< class ForwardIt, class T >
  * constexpr bool binary_search( ForwardIt first, ForwardIt last,
  *                               const T& value );
  */
+
+template< class ForwardIt, class T >
+bool my_binary_search( ForwardIt first, ForwardIt last, const T& value);
+
 bool binary_search(std::vector<int>& nums, int target);
 
 

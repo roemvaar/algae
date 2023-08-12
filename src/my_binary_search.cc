@@ -3,6 +3,22 @@
 #include <iostream>
 #include <vector>
 
+template< class T >
+bool my_binary_search( std::vector<T>& nums, T target )
+{
+    size_t size = nums.size();
+
+    if (size == 0) {
+        return false;
+    }
+
+    int left = 0;
+    int right = size - 1;
+    int found = false;
+
+
+}
+
 
 /*
  * The elements are compared using operator "<"

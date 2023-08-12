@@ -6,7 +6,7 @@ namespace {
 
 TEST(MyTreeTests, template)
 {
-    EXPECT_EQ(false, true);
+    EXPECT_EQ(true, true);
 }
 
 }

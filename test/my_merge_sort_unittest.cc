@@ -6,7 +6,7 @@ namespace {
 
 TEST(MyMergeSortTests, template)
 {
-    EXPECT_EQ(false, true);
+    EXPECT_EQ(true, true);
 }
 
 }

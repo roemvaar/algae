@@ -3,9 +3,11 @@
 #include <iostream>
 #include <algorithm>
 
-void my_quick_sort(void* base, size_t nums, size_t size)
+template < class T >
+void my_quick_sort(T nums[], size_t size)
 {
-    // implement sort
+    
+
     return;
 }
 
