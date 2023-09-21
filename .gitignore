@@ -35,4 +35,3 @@ build*
 # Custom
 TODO
 .vscode/*
-templates.cc
