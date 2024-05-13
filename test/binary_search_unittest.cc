@@ -1,4 +1,4 @@
-#include "my_binary_search.h"
+#include "sorting.h"
 
 #include <gtest/gtest.h>
 

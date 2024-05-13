@@ -14,20 +14,7 @@ FetchContent_MakeAvailable(googletest)
 
 # Add a testing executable
 add_executable(${PROJECT_NAME}
-    my_bfs_unittest.cc
-    my_binary_search_unittest.cc
-    my_dfs_unittest.cc
-    my_graph_unittest.cc
-    my_hash_table_unittest.cc
-    my_heap_unittest.cc
-    my_linked_list_unittest.cc
-    my_merge_sort_unittest.cc
-    my_queue_unittest.cc
-    my_quick_sort_unittest.cc
-    my_stack_unittest.cc
-    my_tree_unittest.cc
-    my_trie_unittest.cc
-    my_vector_unittest.cc
+    binary_search_unittest.cc
 )
 
 target_link_libraries(${PROJECT_NAME}

@@ -1,15 +1,33 @@
 # Algorithms and Data Structures
 
+Personal implementation of core algorithms and data structures in C.
+
 ## Core Data Structures, Algorithms, and Concepts
 
-|   **Data Structures**  |   **Algorithms**   |      **Concepts**      |
-|:----------------------:|:------------------:|:----------------------:|
-|      Linked Lists      | Bread-First Search |    Bit Manipulation    |
-| Trees, Tries, & Graphs | Depth-First Search | Memory (Stack vs Heap) |
-|     **Stacks** & Queues    |  **Binary Search** |        Recursion       |
-|          Heaps         |     Merge Sort     |   Dynamic Programming  |
-|         Vectors        |     Quick Sort     |   Big O Time & Space   |
-|       Hash Tables      |                    |                        |
+**Data Structures:**
+
+[] Linked Lists
+[] Trees, Tries, & Graphs
+[] Stacks & Queues
+[] Heaps
+[] Vectors
+[] Hash Tables
+
+**Algorithms:**
+
+[] Bread-First Search
+[] Depth-First Search
+[] Binary Search
+[] Merge Sort
+[] Quick Sort
+
+**Concepts:**
+
+[] Bit Manipulation
+[] Memory (Stack vs Heap)
+[] Recursion
+[] Dynamic Programming
+[] Big O Time & Space
 
 ## Build
 

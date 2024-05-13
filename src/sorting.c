@@ -28,7 +28,7 @@ void bubble_sort(int *nums, int size)
 }
 
 
-int main()
+int sorting_main()
 {
     int nums[] = {6, 4, 10, 3, 5, 2, 1};
     int arr[] = {64, 34, 25, 12, 22, 11, 90};
