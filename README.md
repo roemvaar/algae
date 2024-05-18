@@ -2,6 +2,20 @@
 
 Personal implementation of core algorithms and data structures in C.
 
+## Build
+
+```
+$ cmake -B build
+$ cmake --build build
+```
+
+## Test
+
+```
+$ cd build
+$ ctest
+```
+
 ## Core Data Structures, Algorithms, and Concepts
 
 **Data Structures:**
@@ -28,17 +42,3 @@ Personal implementation of core algorithms and data structures in C.
 - [ ] Recursion
 - [ ] Dynamic Programming
 - [ ] Big O Time & Space
-
-## Build
-
-```
-$ cmake -B build
-$ cmake --build build
-```
-
-## Test
-
-```
-$ cd build
-$ ctest
-```

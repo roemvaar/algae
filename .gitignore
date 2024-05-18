@@ -35,3 +35,4 @@ build*
 # Custom
 TODO
 .vscode/*
+*.log
