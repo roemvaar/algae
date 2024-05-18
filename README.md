@@ -4,17 +4,26 @@ Personal implementation of core algorithms and data structures in C.
 
 ## Build
 
+Building using CMake is not working at the moment, instead use:
+
 ```
+$ gcc -Iinclude/ -IUnity/src src/binary_search.c test/unittest_main.c src/utils.c ./Unity/src/unity.c -o unittest_main
+```
+
+<!-- ```
 $ cmake -B build
 $ cmake --build build
-```
+``` -->
 
 ## Test
 
+Not working at the moment.
+
+<!-- 
 ```
 $ cd build
 $ ctest
-```
+``` -->
 
 ## Core Data Structures, Algorithms, and Concepts
 
