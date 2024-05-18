@@ -23,16 +23,16 @@ int sorting_main()
     return 0;
 }
 
-int main()
-{
-    printf("Algorithms and Data Structures Implementation in C\n");
+// int main()
+// {
+//     printf("Algorithms and Data Structures Implementation in C\n");
 
-    sorting_main();
+//     sorting_main();
 
-    // main_queue();
-    // main_queue_stl();
+//     // main_queue();
+//     // main_queue_stl();
 
-    // main_binary_search();
+//     // main_binary_search();
 
-    return 0;
-}
+//     return 0;
+// }
