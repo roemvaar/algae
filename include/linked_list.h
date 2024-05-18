@@ -6,3 +6,36 @@
  *  - Inserting and deleting elements
  *
  */
+
+#ifndef SRC_LINKED_LIST_H_
+#define SRC_LINKED_LIST_H_
+
+#include <stdio.h>
+
+struct IntElement {
+    struct IntElement *next;
+    int data;
+} element_t;
+
+
+/* list_add
+ */
+void list_add(element_t *list_head, int data);
+
+/* list_add_tail
+ */
+void list_add_tail(element_t *list_head, int data);
+
+/* list_delete
+ */
+void list_delete(element_t *list_head, int data);
+
+/* list_empty 
+ */
+void list_empty(element_t *list_head);
+
+/* list_search
+ */
+void list_search(element_t *list_head);
+
+#endif  /* SRC_LINKED_LIST_H_ */
