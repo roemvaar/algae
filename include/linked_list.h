@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-struct IntElement {
+typedef struct IntElement {
     struct IntElement *next;
     int data;
 } element_t;
