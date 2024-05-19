@@ -1,4 +1,4 @@
-# Algorithms and Data Structures
+# algae: algorithms and data structures in C
 
 Personal implementation of core algorithms and data structures in C.
 

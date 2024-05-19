@@ -1,11 +1,19 @@
+project(algae C)
 cmake_minimum_required(VERSION 3.5)
 
-project(algorithms_and_data_structures C)
+set(TARGET_GROUP production CACHE STRING "Group to build")
 
 include_directories(include)
-
-# enable_testing()
-
-add_subdirectory(include)
 add_subdirectory(src)
-# add_subdirectory(test)
+
+if(TARGET_GROUP STREQUAL production)
+    add_subdirectory(main)
+elseif(TARGET_GROUP STREQUAL test)
+    enable_testing()
+    include(CTest)
+    include_directories(Unity/src)
+    add_subdirectory(test)
+    add_subdirectory(Unity)
+else()
+    message(FATAL_ERROR "Given TARGET_GROUP unknown")
+endif()
