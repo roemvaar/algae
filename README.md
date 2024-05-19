@@ -4,24 +4,29 @@ Personal implementation of core algorithms and data structures in C.
 
 ## Build
 
+First, clone the repo to your computer:
+
 ```
-$ cmake -B build
-$ cmake --build build
+$ git clone --recurse-submodules https://github.com/roemvaar/algae.git
+```
+
+Build:
+
+```
+$ mkdir -p build && cd build
+$ cmake ..
+$ make
 ```
 
 ## Test
 
-Building using CMake is not working at the moment, instead use:
+Move to the `build` directory.
 
 ```
-$ gcc -Iinclude/ -IUnity/src src/binary_search.c test/unittest_main.c src/utils.c ./Unity/src/unity.c -o unittest_main
+$ cmake .. -DTARGET_GROUP=test
+$ make
+$ ctest --verbose
 ```
-
-<!-- 
-```
-$ cd build
-$ ctest
-``` -->
 
 ## Core Data Structures, Algorithms, and Concepts
 
