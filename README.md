@@ -1,5 +1,10 @@
 # algae: algorithms and data structures in C
 
+<a href="https://scan.coverity.com/projects/roemvaar-algae">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/30285/badge.svg"/>
+</a>
+
 Personal implementation of core algorithms and data structures in C.
 
 ## Build
