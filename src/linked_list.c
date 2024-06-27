@@ -7,7 +7,17 @@ void list_add(element_t *list_head, int data)
 
 void list_add_tail(element_t *list_head, int data)
 {
-    return;
+    element_t *it = list_head;
+
+    while (it->next != NULL) {
+        it = it->next;
+    }
+
+    element_t last = malloc(sizeof(element_t));
+
+    it->next = last;
+    last->data = data;
+    last->next = NULL;
 }
 
 void list_delete(element_t *list_head, int data)
@@ -15,9 +25,22 @@ void list_delete(element_t *list_head, int data)
     return;
 }
 
-void list_empty(element_t *list_head)
+/*
+    returns:
+    0 - not empty
+    1 - empty
+ */
+int list_empty(element_t *list_head)
 {
-    return;
+    int empty;
+
+    if (list_head == NULL) {
+        empty = 1
+    } else {
+        empty = 0;
+    }
+
+    return ret;
 }
 
 void list_search(element_t *list_head)
