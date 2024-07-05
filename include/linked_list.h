@@ -1,4 +1,5 @@
-/* Linked List implementation in C
+/**
+ * Linked List implementation in C
  *
  * Basic linked list operations:
  *  - Tracking the head element
@@ -7,34 +8,81 @@
  *
  */
 
-#ifndef SRC_LINKED_LIST_H_
-#define SRC_LINKED_LIST_H_
+#ifndef INCLUDE_LINKED_LIST_H_
+#define INCLUDE_LINKED_LIST_H_
 
+#include <stdbool.h>
 #include <stdio.h>
 
-typedef struct IntElement {
-    struct IntElement *next;
+
+typedef struct node {
     int data;
-} element_t;
+    struct node *next;
+} Node;
 
-/* list_insert
- */
-void list_insert(element_t *list_head, int data);
+typedef struct linked_list {
+    struct node *head;
+} LinkedList;
 
-/* list_add_tail
+/**
+ * create_list
+ * 
+ * allocates memory and initializes a new LinkedList
+ * 
+ * return:
+ * list - if list was created succesfuly
+ * NULL - if error
  */
-void list_add_tail(element_t *list_head, int data);
+LinkedList *create_list(void);
 
-/* list_delete
+/**
+ * is_empty
+ * 
+ * check if the list is empty by checking head
+ * 
+ * return:
+ * 0 - if list is empty
+ * 1 - otherwise
  */
-void list_delete(element_t *list_head, int data);
+bool is_empty(const LinkedList *list);
 
-/* list_empty 
+/**
+ * prepend
+ * 
+ * inserts a new node at the beginning (before head)
+ * 
+ * return:
+ * 0 - if node was prepended succesfuly
+ * 1 - error
  */
-void list_empty(element_t *list_head);
+bool prepend(LinkedList *list, int data);
 
-/* list_search
+/**
+ * append
+ * 
+ * inserts a new node at the end (after tail)
  */
-element_t *list_search(element_t *list_head, int k);
+bool append(LinkedList *list, int data);
+
+/**
+ * insert_after
+ * 
+ * inserts a new node at the end (after tail)
+ */
+bool insert_after(LinkedList *list, Node *node, int data);
+
+/**
+ * delete_node
+ * 
+ * deletes a specific node from the list
+ */
+void delete_node(LinkedList *list, Node *node);
+
+/**
+ * print_list
+ * 
+ * traverses and print the data of each node
+ */
+void print_list(const LinkedList *list);
 
 #endif  /* SRC_LINKED_LIST_H_ */

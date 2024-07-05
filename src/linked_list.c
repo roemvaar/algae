@@ -1,74 +1,146 @@
+/**
+ * Linked List implementation in C
+ */
+
+#include <stdbool.h>
 #include <stdlib.h>
+
 #include "linked_list.h"
 
 
-element_t create_element(int key);
+static Node *create_node(int data);
 
 
-void list_insert(element_t *list_head, int data)
+LinkedList *create_list(void)
 {
-    return;
+    LinkedList *list;
+
+    list = malloc(sizeof(LinkedList));
+    if (list == NULL) {
+        fprintf(stderr, "[LinkedList]: Error creating linked list\n");
+        return NULL;
+    }
+
+    return list;
 }
 
-/**
- * list_prepend
- * 
- * Given an element x whose key attribute has already been set,
- * list_prepend procedure adds x to the front of the linked list.
- */
-void list_prepend(element_t *list_head, int data)
-{
-    element_t new_head = create_element(data);
 
-    new_head.next = list_head;
-    list_head = new_head;
-}
-
-void list_delete(element_t *list_head, int data)
-{
-    return;
-}
-
-/*
-    returns:
-    0 - not empty
-    1 - empty
- */
-int list_empty(element_t *list_head)
+bool is_empty(const LinkedList *list)
 {
     int empty;
 
-    if (list_head == NULL) {
-        empty = 1;
-    } else {
+    if (list->head == NULL) {
         empty = 0;
+    } else {
+        empty = 1;
     }
 
     return empty;
 }
 
-/**
- * list_search
- */
-element_t *list_search(element_t *list_head, int k)
-{
-    element_t *element = list_head;
 
-    while (element == NULL && element != k) {
-        element = element->next;
+bool prepend(LinkedList *list, int data)
+{
+    Node *new;
+    
+    new = create_node(data);
+    if (new == NULL) {
+        fprintf(stderr, "[LinkedList]: Error prepending node\n");
+        return 1;
     }
 
-    return element;
+    new->next = list->head;
+    list->head = new;
+
+    return 0;
 }
 
-element_t create_element(int key)
-{
-    element_t element = malloc(sizeof(element_t));
 
-    if (element == NULL) {
-        fprintf(stderr, "linked_list: error creating new element");
+bool append(LinkedList *list, int data)
+{
+    Node *iter;
+    Node *new;
+
+    iter = list->head;
+
+    while (iter->next != NULL) {
+        iter = iter->next;
+    }
+
+    new = create_node(data);
+    if (new == NULL) {
+        fprintf(stderr, "[LinkedList]: Error appending node\n");
+        return 1;
+    }
+
+    iter->next = new;
+
+    return 0;
+}
+
+
+bool insert_after(LinkedList *list, Node *node, int data)
+{
+    Node *iter;
+    Node *new;
+
+    // TODO(roemvaar): Do we need to give the user "access" to individual nodes?
+    iter = list->head;
+
+    while(iter != node) {
+        iter = iter->next;
+    }
+
+    new = create_node(data);
+    if (new == NULL) {
+        fprintf(stderr, "[LinkedList]: Error inserting node\n");
+        return 1;
+    }
+
+    new->next = iter->next;
+    iter->next = new;
+
+    return 0;
+}
+
+
+void delete_node(LinkedList *list, Node *node)
+{
+    Node *iter;
+
+    iter = list->head;
+
+    while(iter->next != NULL && iter->next != node) {
+        iter = iter->next;
+    }
+
+    iter->next = node->next;
+    free(node);
+}
+
+
+void print_list(const LinkedList *list)
+{
+    Node *iter = list->head;
+
+    while (iter != NULL) {
+        printf("%d\t", iter->data);
+        iter = iter->next;
+    }
+
+    printf("\n");
+}
+
+
+static Node *create_node(int data)
+{
+    Node *node;
+
+    node = malloc(sizeof(Node));
+    if (node == NULL) {
         return NULL;
     }
 
-    return element;
+    node->data = data;
+    node->next = NULL;
 }
