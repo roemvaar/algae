@@ -17,10 +17,9 @@ typedef struct IntElement {
     int data;
 } element_t;
 
-
-/* list_add
+/* list_insert
  */
-void list_add(element_t *list_head, int data);
+void list_insert(element_t *list_head, int data);
 
 /* list_add_tail
  */
@@ -36,6 +35,6 @@ void list_empty(element_t *list_head);
 
 /* list_search
  */
-void list_search(element_t *list_head);
+element_t *list_search(element_t *list_head, int k);
 
 #endif  /* SRC_LINKED_LIST_H_ */
