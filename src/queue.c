@@ -1,6 +1,6 @@
 #include "queue.h"
 
-queue *queue_create(size_t size, size_t element)
+queue *queue_create(size_t size, size_t element_size)
 {
     queue *q;
 

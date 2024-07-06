@@ -27,7 +27,7 @@ void test_linked_lists(void)
     prepend(l, 10);
 
     printf("Is list empty?... ");
-    
+
     res = is_empty(l);
     if (res == 0) {
         printf("yes!\n");

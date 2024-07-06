@@ -37,9 +37,10 @@ $ ctest --verbose
 
 **Data Structures:**
 
-- [ ] Linked Lists
+- [X] Linked Lists
 - [ ] Trees, Tries, & Graphs
-- [ ] Stacks & Queues
+- [ ] Stacks
+- [ ] Queues
 - [ ] Heaps
 - [ ] Vectors
 - [ ] Hash Tables
