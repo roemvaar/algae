@@ -14,18 +14,14 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-
-typedef struct node {
+/* An element in a singly linked list */
+struct list_node {
     int data;
-    struct node *next;
-} Node;
-
-typedef struct linked_list {
-    struct node *head;
-} LinkedList;
+    struct list_node *next;
+};
 
 /**
- * create_list
+ * list_create
  * 
  * allocates memory and initializes a new LinkedList
  * 
@@ -33,10 +29,10 @@ typedef struct linked_list {
  * list - if list was created succesfuly
  * NULL - if error
  */
-LinkedList *create_list(void);
+struct list_node *list_create(void);
 
 /**
- * is_empty
+ * list_empty
  * 
  * check if the list is empty by checking head
  * 
@@ -44,10 +40,10 @@ LinkedList *create_list(void);
  * 0 - if list is empty
  * 1 - otherwise
  */
-bool is_empty(const LinkedList *list);
+bool list_empty(const struct list_node *list);
 
 /**
- * prepend
+ * list_prepend
  * 
  * inserts a new node at the beginning (before head)
  * 
@@ -55,34 +51,43 @@ bool is_empty(const LinkedList *list);
  * 0 - if node was prepended succesfuly
  * 1 - error
  */
-bool prepend(LinkedList *list, int data);
+bool list_prepend(struct list_node *list, int data);
 
 /**
- * append
+ * list_append
  * 
  * inserts a new node at the end (after tail)
  */
-bool append(LinkedList *list, int data);
+bool list_append(struct list_node *list, int data);
 
 /**
- * insert_after
+ * list_insert_after
  * 
- * inserts a new node at the end (after tail)
+ * inserts a new node after `node`
  */
-bool insert_after(LinkedList *list, Node *node, int data);
+bool list_insert_after(struct list_node *list, struct list_node *node, int data);
 
 /**
- * delete_node
+ * list_delete_node
  * 
  * deletes a specific node from the list
  */
-void delete_node(LinkedList *list, Node *node);
+void list_delete_node(struct list_node *list, struct list_node *node);
+
+/* Deleting an element */
+// void list_delete_by_key(struct list_node *list, int key);
 
 /**
- * print_list
+ * list_traverse
  * 
  * traverses and print the data of each node
  */
-void print_list(const LinkedList *list);
+void list_traverse(const struct list_node *list);
+
+/* Searching a linked list
+ * Finds the first element with key k in list L by a simple linear search, returning
+ * a pointer to this element. Return NULL if key is not found in L.
+ */
+struct list_node *list_search(struct list_node *head, int key);
 
 #endif  /* SRC_LINKED_LIST_H_ */

@@ -1,21 +1,25 @@
-/**
+/** linked_list.c
+ * 
  * Linked List implementation in C
+ * 
+ * A linked list is a data structure in which the objects are arranged in a
+ * linear order. This is an implementation of a singly linked list.
  */
+
+#include "linked_list.h"
 
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "linked_list.h"
+
+static struct list_node *create_node(int data);
 
 
-static Node *create_node(int data);
-
-
-LinkedList *create_list(void)
+struct list_node *create_list(void)
 {
-    LinkedList *list;
+    struct list_node *list;
 
-    list = malloc(sizeof(LinkedList));
+    list = malloc(sizeof(struct list_node));
     if (list == NULL) {
         fprintf(stderr, "[LinkedList]: Error creating linked list\n");
         return NULL;
@@ -24,12 +28,24 @@ LinkedList *create_list(void)
     return list;
 }
 
+/* Creating a linked list structure */
+struct list_node *list_create(void) {
+    // Allocate a dummy node for the head of the list
+    struct list_node *list = (struct list_node *)malloc(sizeof(struct list_node));
+    if (list == NULL) {
+        return NULL;  // Return NULL if allocation fails
+    }
+    list->data = 0;  // Optionally initialize the data
+    list->next = NULL;  // The list is empty initially
+    return list;
+}
 
-bool is_empty(const LinkedList *list)
+
+bool list_empty(const struct list_node *list)
 {
     int empty;
 
-    if (list->head == NULL) {
+    if (list == NULL) {
         empty = 0;
     } else {
         empty = 1;
@@ -38,10 +54,10 @@ bool is_empty(const LinkedList *list)
     return empty;
 }
 
-
-bool prepend(LinkedList *list, int data)
+/* Inserting an element (beginning) */
+bool list_prepend(struct list_node *list, int data)
 {
-    Node *new;
+    struct list_node *new;
     
     new = create_node(data);
     if (new == NULL) {
@@ -49,19 +65,19 @@ bool prepend(LinkedList *list, int data)
         return 1;
     }
 
-    new->next = list->head;
-    list->head = new;
+    new->next = list;
+    list = new;
 
     return 0;
 }
 
 
-bool append(LinkedList *list, int data)
+bool list_append(struct list_node *list, int data)
 {
-    Node *iter;
-    Node *new;
+    struct list_node *iter;
+    struct list_node *new;
 
-    iter = list->head;
+    iter = list;
 
     while (iter->next != NULL) {
         iter = iter->next;
@@ -79,13 +95,13 @@ bool append(LinkedList *list, int data)
 }
 
 
-bool insert_after(LinkedList *list, Node *node, int data)
+bool list_insert_after(struct list_node *list, struct list_node *node, int data)
 {
-    Node *iter;
-    Node *new;
+    struct list_node *iter;
+    struct list_node *new;
 
     // TODO(roemvaar): Do we need to give the user "access" to individual nodes?
-    iter = list->head;
+    iter = list;
 
     while(iter != node) {
         iter = iter->next;
@@ -104,11 +120,11 @@ bool insert_after(LinkedList *list, Node *node, int data)
 }
 
 
-void delete_node(LinkedList *list, Node *node)
+void list_delete_node(struct list_node *list, struct list_node *node)
 {
-    Node *iter;
+    struct list_node *iter;
 
-    iter = list->head;
+    iter = list;
 
     while(iter->next != NULL && iter->next != node) {
         iter = iter->next;
@@ -118,10 +134,10 @@ void delete_node(LinkedList *list, Node *node)
     free(node);
 }
 
-
-void print_list(const LinkedList *list)
+/* Traversing the list (printing the elements) */
+void list_traverse(const struct list_node *list)
 {
-    Node *iter = list->head;
+    struct list_node *iter = list;
 
     while (iter != NULL) {
         printf("%d\t", iter->data);
@@ -132,11 +148,11 @@ void print_list(const LinkedList *list)
 }
 
 
-static Node *create_node(int data)
+static struct list_node *create_node(int data)
 {
-    Node *node;
+    struct list_node *node;
 
-    node = malloc(sizeof(Node));
+    node = malloc(sizeof(struct list_node));
     if (node == NULL) {
         return NULL;
     }
