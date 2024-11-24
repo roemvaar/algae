@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-#include "bubble_sort.h"
+#include "sort.h"
 #include "linked_list.h"
 #include "utils.h"
 
 
 void test_linked_lists(void)
 {
-    LinkedList *l;
+    struct list_node *l;
     int res;
 
     printf("Creating Linked List...\n");

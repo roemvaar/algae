@@ -1,6 +1,7 @@
-#include "bubble_sort.h"
+#include "sort.h"
 
 #include <stdio.h>
+
 
 void bubble_sort(int *nums, int size)
 {
