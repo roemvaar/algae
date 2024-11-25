@@ -3,6 +3,7 @@ set(SOURCES
     bubble_sort.c
     insertion_sort.c
     linked_list.c
+    selection_sort.c
     utils.c
 )
 

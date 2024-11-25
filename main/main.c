@@ -5,49 +5,49 @@
 #include "utils.h"
 
 
-void test_linked_lists(void)
-{
-    struct list_node *l;
-    int res;
+// void test_linked_lists(void)
+// {
+//     struct list_node *l;
+//     int res;
 
-    printf("Creating Linked List...\n");
+//     printf("Creating Linked List...\n");
 
-    l = create_list();
+//     l = create_list();
 
-    printf("Is list empty?... ");
+//     printf("Is list empty?... ");
     
-    res = is_empty(l);
-    if (res == 0) {
-        printf("yes!\n");
-    } else {
-        printf("no!\n");
-    }
+//     res = is_empty(l);
+//     if (res == 0) {
+//         printf("yes!\n");
+//     } else {
+//         printf("no!\n");
+//     }
 
-    printf("Prepending the following element to the list: 10\n");
-    prepend(l, 10);
+//     printf("Prepending the following element to the list: 10\n");
+//     prepend(l, 10);
 
-    printf("Is list empty?... ");
+//     printf("Is list empty?... ");
 
-    res = is_empty(l);
-    if (res == 0) {
-        printf("yes!\n");
-    } else {
-        printf("no!\n");
-    }
+//     res = is_empty(l);
+//     if (res == 0) {
+//         printf("yes!\n");
+//     } else {
+//         printf("no!\n");
+//     }
 
-    printf("Prepending the following element to the list: 55, 45\n");
-    prepend(l, 55);
-    prepend(l, 45);
+//     printf("Prepending the following element to the list: 55, 45\n");
+//     prepend(l, 55);
+//     prepend(l, 45);
 
-    print_list(l);
+//     print_list(l);
 
-    // Append
-    append(l, 103);
-    append(l, 25);
-    append(l, 14);
+//     // Append
+//     append(l, 103);
+//     append(l, 25);
+//     append(l, 14);
 
-    print_list(l);
-}
+//     print_list(l);
+// }
 
 
 void test_sort(void)
@@ -58,7 +58,8 @@ void test_sort(void)
     // Unsorted array
     print_array(nums, size);
 
-    bubble_sort(nums, size);
+    // bubble_sort(nums, size);
+    selection_sort(nums, size);
 
     // Sorted array
     print_array(nums, size);
@@ -69,7 +70,8 @@ int main()
 {
     printf("algae: algorithms and data structures in C\n");
 
-    test_linked_lists();
+    // test_linked_lists();
+    test_sort();
 
     return 0;
 }
