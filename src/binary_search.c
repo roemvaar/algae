@@ -1,5 +1,6 @@
 #include "binary_search.h"
 
+
 int binary_search(int *array, int size, int target)
 {
     int index = -1;
