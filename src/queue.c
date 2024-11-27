@@ -41,6 +41,7 @@ queue *queue_create(size_t size, size_t element_size)
     return q;
 }
 
+
 void queue_destroy(queue **q)
 {
     if (check_nullptr(q, QUEUE_ERROR_NULLPTR)) {

@@ -5,6 +5,7 @@ set(SOURCES
     linked_list.c
     selection_sort.c
     utils.c
+    queue.c
 )
 
 add_library(algae STATIC
