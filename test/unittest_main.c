@@ -146,15 +146,17 @@ int compare(const int* a, const int* b)
 }
 
 // Helper function to generate a large random array
-void generate_large_array(int* array, int size) {
+void generate_large_array(int* array, int size)
+{
     srand(time(NULL));
     for (int i = 0; i < size; i++) {
-        array[i] = rand() % 1000000; // Random numbers between 0 and 999999
+        array[i] = rand_r() % 1000000;    // Random numbers between 0 and 999999
     }
 }
 
 // Helper function to create a sorted copy of an array
-void copy_and_sort_array(int* source, int* destination, int size) {
+void copy_and_sort_array(int* source, int* destination, int size)
+{
     for (int i = 0; i < size; i++) {
         destination[i] = source[i];
     }
@@ -178,7 +180,8 @@ void test_bubble_sort_single_element_array()
     TEST_ASSERT_TRUE(arrays_equal(array, expected, 1));
 }
 
-void test_bubble_sort_two_elements_unsorted() {
+void test_bubble_sort_two_elements_unsorted()
+{
     int array[] = {2, 1};
     int expected[] = {1, 2};
     bubble_sort(array, 2);
@@ -187,7 +190,8 @@ void test_bubble_sort_two_elements_unsorted() {
 
 // Add other test cases here...
 
-void test_bubble_sort_large_array() {
+void test_bubble_sort_large_array()
+{
     int size = 10000;
     int* large_array = malloc(size * sizeof(int));
     int* expected_large_array = malloc(size * sizeof(int));
@@ -209,14 +213,16 @@ void test_bubble_sort_large_array() {
 /* Linked List */
 
 /* Test for list initialization */
-void test_linked_list_initialization(void) {
+void test_linked_list_initialization(void)
+{
     struct list_node* list = create_list();
     TEST_ASSERT_NOT_NULL(list);
     TEST_ASSERT_TRUE(is_empty(list));  // The list should be empty after creation
 }
 
 /* Test for insertion at the beginning (prepend) */
-void test_linked_list_prepend(void) {
+void test_linked_list_prepend(void)
+{
     struct list_node* list = create_list();
     TEST_ASSERT_TRUE(prepend(list, 10));  // Insert at the beginning
     TEST_ASSERT_FALSE(is_empty(list));    // List should no longer be empty
@@ -224,7 +230,8 @@ void test_linked_list_prepend(void) {
 }
 
 /* Test for insertion at the end (append) */
-void test_linked_list_append(void) {
+void test_linked_list_append(void)
+{
     struct list_node* list = create_list();
     TEST_ASSERT_TRUE(append(list, 20));  // Append to the end
     TEST_ASSERT_EQUAL(20, list->data);   // Check if the data matches
@@ -237,11 +244,12 @@ void test_linked_list_append(void) {
 }
 
 /* Test for insertion after a given node */
-void test_linked_list_insert_after(void) {
+void test_linked_list_insert_after(void)
+{
     struct list_node* list = create_list();
     TEST_ASSERT_TRUE(prepend(list, 10));  // Add first element
     TEST_ASSERT_TRUE(append(list, 20));   // Append second element
-    
+
     struct list_node* second_node = list->next;  // Pointer to second node
     TEST_ASSERT_TRUE(insert_after(list, second_node, 25));  // Insert after second node
 

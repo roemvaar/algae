@@ -58,7 +58,7 @@ bool list_empty(const struct list_node *list)
 bool list_prepend(struct list_node *list, int data)
 {
     struct list_node *new;
-    
+
     new = create_node(data);
     if (new == NULL) {
         fprintf(stderr, "[LinkedList]: Error prepending node\n");
@@ -103,7 +103,7 @@ bool list_insert_after(struct list_node *list, struct list_node *node, int data)
     // TODO(roemvaar): Do we need to give the user "access" to individual nodes?
     iter = list;
 
-    while(iter != node) {
+    while (iter != node) {
         iter = iter->next;
     }
 
@@ -126,7 +126,7 @@ void list_delete_node(struct list_node *list, struct list_node *node)
 
     iter = list;
 
-    while(iter->next != NULL && iter->next != node) {
+    while (iter->next != NULL && iter->next != node) {
         iter = iter->next;
     }
 

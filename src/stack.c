@@ -19,19 +19,25 @@ Stack *stack_create(size_t size)
 
 int stack_pop(Stack *stack)
 {
-
+    return 0;
 }
+
 
 /**
  * push
  */
-bool stack_push(Stack *stack, int data);
+bool stack_push(Stack *stack, int data)
+{
+    return true;
+}
+
 
 /**
  * peek
  */
 int stack_peek(const Stack *stack)
 {
+    return 0;
 }
 
 /**

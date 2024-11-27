@@ -15,7 +15,7 @@
 //     l = create_list();
 
 //     printf("Is list empty?... ");
-    
+
 //     res = is_empty(l);
 //     if (res == 0) {
 //         printf("yes!\n");

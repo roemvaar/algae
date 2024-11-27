@@ -7,6 +7,15 @@ on:
     branches: [ "main" ]
 
 jobs:
+  cpplint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v1
+    - run: pip install cpplint
+    - run: cpplint --exclude=external/* --exclude=build/* --filter=-legal/copyright,-whitespace/braces,-readability/casting,-build/include_subdir,-build/header_guard --linelength=120 \
+    --quiet --recursive .
+
   build:
     runs-on: ubuntu-latest
 
