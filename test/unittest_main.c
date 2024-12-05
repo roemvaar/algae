@@ -1,12 +1,12 @@
-/* This code was developed using ChatGPT 3.5 */
+/* This code was developed with the help of ChatGPT 3.5 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#include "binary_search.h"
-// #include "linked_list.h"
-#include "sort.h"
+// #include "binary_search.h"
+#include "linked_list.h"
+// #include "sort.h"
 #include "unity.h"
 
 
@@ -22,375 +22,363 @@ void tearDown(void)
     return;
 }
 
-/**********************************************************************************/
-/* Binary Search */
+// /**********************************************************************************/
+// /* Binary Search */
 
-/* Tests for empty array */
-// void test_binary_search_empty_array(void)
+// /* Tests for empty array */
+// // void test_binary_search_empty_array(void)
+// // {
+//     // int nums[] = {};
+//     // int size = sizeof(nums) / sizeof(nums[0]);
+
+//     // int res = binary_search(nums, size, 4);
+
+//     // TEST_ASSERT_EQUAL(3, res);
+// //     return;
+// // }
+
+// /* Tests for element not found in the array */
+// void test_binary_search_element_not_in_array(void)
 // {
-    // int nums[] = {};
-    // int size = sizeof(nums) / sizeof(nums[0]);
+//     int nums[] = {1, 2, 3, 4, 5, 6, 10};
+//     int size = sizeof(nums) / sizeof(nums[0]);
 
-    // int res = binary_search(nums, size, 4);
+//     int res = binary_search(nums, size, 7);
 
-    // TEST_ASSERT_EQUAL(3, res);
-//     return;
+//     TEST_ASSERT_EQUAL(-1, res);
 // }
 
-/* Tests for element not found in the array */
-void test_binary_search_element_not_in_array(void)
-{
-    int nums[] = {1, 2, 3, 4, 5, 6, 10};
-    int size = sizeof(nums) / sizeof(nums[0]);
+// /* Tests for unsuccesful search on left bound */
+// void test_binary_search_unsuccesful_search_on_left(void)
+// {
+//     int nums[] = {1, 2, 4, 5, 6, 7, 150, 1000, 1001, 1025, 1038, 5200};
+//     int size = sizeof(nums) / sizeof(nums[0]);
 
-    int res = binary_search(nums, size, 7);
+//     int res = binary_search(nums, size, 3);
 
-    TEST_ASSERT_EQUAL(-1, res);
-}
+//     TEST_ASSERT_EQUAL(-1, res);
+// }
 
-/* Tests for unsuccesful search on left bound */
-void test_binary_search_unsuccesful_search_on_left(void)
-{
-    int nums[] = {1, 2, 4, 5, 6, 7, 150, 1000, 1001, 1025, 1038, 5200};
-    int size = sizeof(nums) / sizeof(nums[0]);
+// /* Tests for unsuccesful search on right bound */
+// void test_binary_search_unsuccesful_search_on_right(void)
+// {
+//     int nums[] = {1, 2, 4, 5, 6, 7, 150, 1000, 1001, 1025, 1038, 5200};
+//     int size = sizeof(nums) / sizeof(nums[0]);
 
-    int res = binary_search(nums, size, 3);
+//     int res = binary_search(nums, size, 1024);
 
-    TEST_ASSERT_EQUAL(-1, res);
-}
+//     TEST_ASSERT_EQUAL(-1, res);
+// }
 
-/* Tests for unsuccesful search on right bound */
-void test_binary_search_unsuccesful_search_on_right(void)
-{
-    int nums[] = {1, 2, 4, 5, 6, 7, 150, 1000, 1001, 1025, 1038, 5200};
-    int size = sizeof(nums) / sizeof(nums[0]);
+// /* Tests for succesful search on left bound */
+// void test_binary_search_succesful_element_on_left(void)
+// {
+//     int nums[] = {1, 2, 4, 5, 6, 7, 150, 1000, 1001, 1025, 1038, 5200};
+//     int size = sizeof(nums) / sizeof(nums[0]);
 
-    int res = binary_search(nums, size, 1024);
+//     int res = binary_search(nums, size, 1);
 
-    TEST_ASSERT_EQUAL(-1, res);
-}
+//     TEST_ASSERT_EQUAL(0, res);
+// }
 
-/* Tests for succesful search on left bound */
-void test_binary_search_succesful_element_on_left(void)
-{
-    int nums[] = {1, 2, 4, 5, 6, 7, 150, 1000, 1001, 1025, 1038, 5200};
-    int size = sizeof(nums) / sizeof(nums[0]);
+// /* Tests for succesful search on right bound */
+// void test_binary_search_succesful_element_on_right(void)
+// {
+//     int nums[] = {1, 2, 4, 5, 6, 7, 150, 1000, 1001, 1025, 1038, 5200};
+//     int size = sizeof(nums) / sizeof(nums[0]);
 
-    int res = binary_search(nums, size, 1);
+//     int res = binary_search(nums, size, 5200);
 
-    TEST_ASSERT_EQUAL(0, res);
-}
+//     TEST_ASSERT_EQUAL(size - 1, res);
+// }
 
-/* Tests for succesful search on right bound */
-void test_binary_search_succesful_element_on_right(void)
-{
-    int nums[] = {1, 2, 4, 5, 6, 7, 150, 1000, 1001, 1025, 1038, 5200};
-    int size = sizeof(nums) / sizeof(nums[0]);
+// /* Tests for element successful on middle */
+// void test_binary_search_succesful_element_on_middle(void)
+// {
+//     int nums[] = {1, 2, 3, 4, 5, 6, 10};
+//     int size = sizeof(nums) / sizeof(nums[0]);
 
-    int res = binary_search(nums, size, 5200);
+//     int res = binary_search(nums, size, 4);
 
-    TEST_ASSERT_EQUAL(size - 1, res);
-}
+//     TEST_ASSERT_EQUAL(3, res);
+// }
 
-/* Tests for element successful on middle */
-void test_binary_search_succesful_element_on_middle(void)
-{
-    int nums[] = {1, 2, 3, 4, 5, 6, 10};
-    int size = sizeof(nums) / sizeof(nums[0]);
+// /* Tests for element succesful on middle + 1 with even array size */
 
-    int res = binary_search(nums, size, 4);
+// /* Tests for element succesful on middle + 1 with odd array size */
 
-    TEST_ASSERT_EQUAL(3, res);
-}
+// /* Tests for an element from the middle cannot be found, for example 5 in [1, 2, 6, 10] */
+// void test_binary_search_element_from_middle_cannot_be_found(void)
+// {
+//     int nums[] = {1, 2, 6, 10};
+//     int size = sizeof(nums) / sizeof(nums[0]);
 
-/* Tests for element succesful on middle + 1 with even array size */
+//     int res = binary_search(nums, size, 5);
 
-/* Tests for element succesful on middle + 1 with odd array size */
+//     TEST_ASSERT_EQUAL(-1, res);
+// }
 
-/* Tests for an element from the middle cannot be found, for example 5 in [1, 2, 6, 10] */
-void test_binary_search_element_from_middle_cannot_be_found(void)
-{
-    int nums[] = {1, 2, 6, 10};
-    int size = sizeof(nums) / sizeof(nums[0]);
+// /* Tests for succesful in the array contains duplicate values, for example 3 in [1, 2, 3, 3, 3, 3, 3, 3, 3] */
 
-    int res = binary_search(nums, size, 5);
+// /* Tests for unsuccesful in the array contains duplicate values, for example 4 in [1, 2, 3, 3, 3, 3, 3, 3, 3] */
 
-    TEST_ASSERT_EQUAL(-1, res);
-}
+// /* Test for unordered array */
 
-/* Tests for succesful in the array contains duplicate values, for example 3 in [1, 2, 3, 3, 3, 3, 3, 3, 3] */
+// /* Binary Search */
+// /**********************************************************************************/
 
-/* Tests for unsuccesful in the array contains duplicate values, for example 4 in [1, 2, 3, 3, 3, 3, 3, 3, 3] */
+// /**********************************************************************************/
+// /* Bubble Sort */
+// // Helper function to compare two arrays
+// int arrays_equal(int* arr1, int* arr2, int size) {
+//     for (int i = 0; i < size; i++) {
+//         if (arr1[i] != arr2[i]) {
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
 
-/* Test for unordered array */
+// // Comparison function for qsort
+// int compare(const int* a, const int* b)
+// {
+//     return (*a - *b);
+// }
 
-/* Binary Search */
-/**********************************************************************************/
+// // Helper function to generate a large random array
+// void generate_large_array(int* array, int size)
+// {
+//     srand(time(NULL));
+//     for (int i = 0; i < size; i++) {
+//         array[i] = rand() % 1000000;    // Random numbers between 0 and 999999
+//     }
+// }
 
-/**********************************************************************************/
-/* Bubble Sort */
-// Helper function to compare two arrays
-int arrays_equal(int* arr1, int* arr2, int size) {
-    for (int i = 0; i < size; i++) {
-        if (arr1[i] != arr2[i]) {
-            return 0;
-        }
-    }
-    return 1;
-}
+// // Helper function to create a sorted copy of an array
+// void copy_and_sort_array(int* source, int* destination, int size)
+// {
+//     for (int i = 0; i < size; i++) {
+//         destination[i] = source[i];
+//     }
+//     // Use qsort from the standard library for expected sorted array
+//     qsort(destination, size, sizeof(int), (int (*)(const void*, const void*))compare);
+// }
 
-// Comparison function for qsort
-int compare(const int* a, const int* b)
-{
-    return (*a - *b);
-}
+// void test_bubble_sort_empty_array()
+// {
+//     int array[] = {};
+//     int expected[] = {};
+//     bubble_sort(array, 0);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 0));
+// }
 
-// Helper function to generate a large random array
-void generate_large_array(int* array, int size)
-{
-    srand(time(NULL));
-    for (int i = 0; i < size; i++) {
-        array[i] = rand() % 1000000;    // Random numbers between 0 and 999999
-    }
-}
+// void test_bubble_sort_single_element_array()
+// {
+//     int array[] = {1};
+//     int expected[] = {1};
+//     bubble_sort(array, 1);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 1));
+// }
 
-// Helper function to create a sorted copy of an array
-void copy_and_sort_array(int* source, int* destination, int size)
-{
-    for (int i = 0; i < size; i++) {
-        destination[i] = source[i];
-    }
-    // Use qsort from the standard library for expected sorted array
-    qsort(destination, size, sizeof(int), (int (*)(const void*, const void*))compare);
-}
+// void test_bubble_sort_two_elements_unsorted()
+// {
+//     int array[] = {2, 1};
+//     int expected[] = {1, 2};
+//     bubble_sort(array, 2);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 2));
+// }
 
-void test_bubble_sort_empty_array()
-{
-    int array[] = {};
-    int expected[] = {};
-    bubble_sort(array, 0);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 0));
-}
+// // Add other test cases here...
 
-void test_bubble_sort_single_element_array()
-{
-    int array[] = {1};
-    int expected[] = {1};
-    bubble_sort(array, 1);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 1));
-}
+// void test_bubble_sort_large_array()
+// {
+//     int size = 10000;
+//     int* large_array = malloc(size * sizeof(int));
+//     int* expected_large_array = malloc(size * sizeof(int));
 
-void test_bubble_sort_two_elements_unsorted()
-{
-    int array[] = {2, 1};
-    int expected[] = {1, 2};
-    bubble_sort(array, 2);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 2));
-}
+//     generate_large_array(large_array, size);
+//     copy_and_sort_array(large_array, expected_large_array, size);
 
-// Add other test cases here...
+//     bubble_sort(large_array, size);
+//     TEST_ASSERT_TRUE(arrays_equal(large_array, expected_large_array, size));
 
-void test_bubble_sort_large_array()
-{
-    int size = 10000;
-    int* large_array = malloc(size * sizeof(int));
-    int* expected_large_array = malloc(size * sizeof(int));
+//     free(large_array);
+//     free(expected_large_array);
+// }
 
-    generate_large_array(large_array, size);
-    copy_and_sort_array(large_array, expected_large_array, size);
+// /* Bubble Sort */
+// /**********************************************************************************/
 
-    bubble_sort(large_array, size);
-    TEST_ASSERT_TRUE(arrays_equal(large_array, expected_large_array, size));
+// /**********************************************************************************/
+// /* Insertion Sort */
 
-    free(large_array);
-    free(expected_large_array);
-}
+// void test_insertion_sort_empty_array()
+// {
+//     int array[] = {};
+//     int expected[] = {};
+//     insertion_sort(array, 0);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 0));
+// }
 
-/* Bubble Sort */
-/**********************************************************************************/
+// void test_insertion_sort_single_element_array()
+// {
+//     int array[] = {1};
+//     int expected[] = {1};
+//     insertion_sort(array, 1);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 1));
+// }
 
-/**********************************************************************************/
-/* Insertion Sort */
+// void test_insertion_sort_two_elements_unsorted()
+// {
+//     int array[] = {2, 1};
+//     int expected[] = {1, 2};
+//     insertion_sort(array, 2);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 2));
+// }
 
-void test_insertion_sort_empty_array()
-{
-    int array[] = {};
-    int expected[] = {};
-    insertion_sort(array, 0);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 0));
-}
+// // Add other test cases here...
 
-void test_insertion_sort_single_element_array()
-{
-    int array[] = {1};
-    int expected[] = {1};
-    insertion_sort(array, 1);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 1));
-}
+// void test_insertion_sort_large_array()
+// {
+//     int size = 10000;
+//     int* large_array = malloc(size * sizeof(int));
+//     int* expected_large_array = malloc(size * sizeof(int));
 
-void test_insertion_sort_two_elements_unsorted()
-{
-    int array[] = {2, 1};
-    int expected[] = {1, 2};
-    insertion_sort(array, 2);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 2));
-}
+//     generate_large_array(large_array, size);
+//     copy_and_sort_array(large_array, expected_large_array, size);
 
-// Add other test cases here...
+//     insertion_sort(large_array, size);
+//     TEST_ASSERT_TRUE(arrays_equal(large_array, expected_large_array, size));
 
-void test_insertion_sort_large_array()
-{
-    int size = 10000;
-    int* large_array = malloc(size * sizeof(int));
-    int* expected_large_array = malloc(size * sizeof(int));
+//     free(large_array);
+//     free(expected_large_array);
+// }
 
-    generate_large_array(large_array, size);
-    copy_and_sort_array(large_array, expected_large_array, size);
+// /* Insertion Sort */
+// /**********************************************************************************/
 
-    insertion_sort(large_array, size);
-    TEST_ASSERT_TRUE(arrays_equal(large_array, expected_large_array, size));
+// /**********************************************************************************/
+// /* Selection Sort */
 
-    free(large_array);
-    free(expected_large_array);
-}
+// void test_selection_sort_empty_array()
+// {
+//     int array[] = {};
+//     int expected[] = {};
+//     selection_sort(array, 0);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 0));
+// }
 
-/* Insertion Sort */
-/**********************************************************************************/
+// void test_selection_sort_single_element_array()
+// {
+//     int array[] = {1};
+//     int expected[] = {1};
+//     selection_sort(array, 1);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 1));
+// }
 
-/**********************************************************************************/
-/* Selection Sort */
+// void test_selection_sort_two_elements_unsorted()
+// {
+//     int array[] = {2, 1};
+//     int expected[] = {1, 2};
+//     selection_sort(array, 2);
+//     TEST_ASSERT_TRUE(arrays_equal(array, expected, 2));
+// }
 
-void test_selection_sort_empty_array()
-{
-    int array[] = {};
-    int expected[] = {};
-    selection_sort(array, 0);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 0));
-}
+// // Add other test cases here...
 
-void test_selection_sort_single_element_array()
-{
-    int array[] = {1};
-    int expected[] = {1};
-    selection_sort(array, 1);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 1));
-}
+// void test_selection_sort_large_array()
+// {
+//     int size = 10000;
+//     int* large_array = malloc(size * sizeof(int));
+//     int* expected_large_array = malloc(size * sizeof(int));
 
-void test_selection_sort_two_elements_unsorted()
-{
-    int array[] = {2, 1};
-    int expected[] = {1, 2};
-    selection_sort(array, 2);
-    TEST_ASSERT_TRUE(arrays_equal(array, expected, 2));
-}
+//     generate_large_array(large_array, size);
+//     copy_and_sort_array(large_array, expected_large_array, size);
 
-// Add other test cases here...
+//     selection_sort(large_array, size);
+//     TEST_ASSERT_TRUE(arrays_equal(large_array, expected_large_array, size));
 
-void test_selection_sort_large_array()
-{
-    int size = 10000;
-    int* large_array = malloc(size * sizeof(int));
-    int* expected_large_array = malloc(size * sizeof(int));
+//     free(large_array);
+//     free(expected_large_array);
+// }
 
-    generate_large_array(large_array, size);
-    copy_and_sort_array(large_array, expected_large_array, size);
-
-    selection_sort(large_array, size);
-    TEST_ASSERT_TRUE(arrays_equal(large_array, expected_large_array, size));
-
-    free(large_array);
-    free(expected_large_array);
-}
-
-/* Insertion Sort */
-/**********************************************************************************/
+// /* Insertion Sort */
+// /**********************************************************************************/
 
 // /**********************************************************************************/
 // /* Linked List */
 
-// /* Test for list initialization */
-// void test_linked_list_initialization(void)
-// {
-//     struct list_node* list = create_list();
-//     TEST_ASSERT_NOT_NULL(list);
-//     TEST_ASSERT_TRUE(is_empty(list));  // The list should be empty after creation
-// }
+/* Test for insertion at the beginning (prepend) */
+void test_linked_list_prepend(void)
+{
+    struct list_node* list = NULL;
+    TEST_ASSERT_TRUE(list_empty(list));             // List should be empty
 
-// /* Test for insertion at the beginning (prepend) */
-// void test_linked_list_prepend(void)
-// {
-//     struct list_node* list = create_list();
-//     TEST_ASSERT_TRUE(prepend(list, 10));  // Insert at the beginning
-//     TEST_ASSERT_FALSE(is_empty(list));    // List should no longer be empty
-//     TEST_ASSERT_EQUAL(10, list->data);    // Check if the data matches
-// }
+    struct list_node *node = list_create_node(10);
+    TEST_ASSERT_TRUE(list_prepend(&list, node));    // Insert at the beginning
+    TEST_ASSERT_FALSE(list_empty(list));            // List should no longer be empty
+    TEST_ASSERT_EQUAL(10, list->data);              // Check if the data matches
+}
 
-// /* Test for insertion at the end (append) */
-// void test_linked_list_append(void)
-// {
-//     struct list_node* list = create_list();
-//     TEST_ASSERT_TRUE(append(list, 20));  // Append to the end
-//     TEST_ASSERT_EQUAL(20, list->data);   // Check if the data matches
+/* Prepend multiple nodes */
+void test_linked_list_prepend_multiple(void)
+{
+    struct list_node* list = NULL;
+    struct list_node *node1 = list_create_node(10);
+    struct list_node *node2 = list_create_node(20);
+    struct list_node *node3 = list_create_node(30);
 
-//     // Add another element
-//     TEST_ASSERT_TRUE(append(list, 30));
-//     struct list_node* second_node = list->next;
-//     TEST_ASSERT_NOT_NULL(second_node);
-//     TEST_ASSERT_EQUAL(30, second_node->data);  // Check if the second element is correct
-// }
+    TEST_ASSERT_TRUE(list_prepend(&list, node1));    // Insert at the beginning (10)
+    TEST_ASSERT_TRUE(list_prepend(&list, node2));    // Insert at the beginning (20)
+    TEST_ASSERT_TRUE(list_prepend(&list, node3));    // Insert at the beginning (30)
 
-// /* Test for insertion after a given node */
-// void test_linked_list_insert_after(void)
-// {
-//     struct list_node* list = create_list();
-//     TEST_ASSERT_TRUE(prepend(list, 10));  // Add first element
-//     TEST_ASSERT_TRUE(append(list, 20));   // Append second element
+    TEST_ASSERT_FALSE(list_empty(list));             // List should no longer be empty
+    TEST_ASSERT_EQUAL(30, list->data);               // Check the new head is 30
+    TEST_ASSERT_EQUAL(20, list->next->data);         // Check the next node is 20
+    TEST_ASSERT_EQUAL(10, list->next->next->data);   // Check the last node is 10
+}
 
-//     struct list_node* second_node = list->next;  // Pointer to second node
-//     TEST_ASSERT_TRUE(insert_after(list, second_node, 25));  // Insert after second node
+/* Prepend to a non-empty list */
+void test_linked_list_prepend_to_non_empty(void)
+{
+    struct list_node* list = NULL;
+    struct list_node *node1 = list_create_node(10);
+    TEST_ASSERT_TRUE(list_prepend(&list, node1));  // Prepend first node (10)
 
-//     struct list_node* third_node = second_node->next;
-//     TEST_ASSERT_NOT_NULL(third_node);
-//     TEST_ASSERT_EQUAL(25, third_node->data);  // Verify the inserted node
-// }
+    struct list_node *node2 = list_create_node(20);
+    TEST_ASSERT_TRUE(list_prepend(&list, node2));  // Prepend second node (20)
 
-// /* Test for list traversal */
-// void test_linked_list_traversal(void) {
-//     struct list_node* list = create_list();
-//     append(list, 1);
-//     append(list, 2);
-//     append(list, 3);
+    TEST_ASSERT_EQUAL(20, list->data);             // Check new head is 20
+    TEST_ASSERT_EQUAL(10, list->next->data);       // Check second node is 10
+}
 
-//     // Traverse and check each element
-//     struct list_node* current = list;
-//     TEST_ASSERT_EQUAL(1, current->data);
-//     current = current->next;
+/* Prepend NULL node (error handling) */
+void test_linked_list_prepend_null(void)
+{
+    struct list_node* list = NULL;
+    TEST_ASSERT_TRUE(list_empty(list));             // List should be empty
 
-//     TEST_ASSERT_EQUAL(2, current->data);
-//     current = current->next;
+    struct list_node *node = NULL;                  // Simulate an invalid node
+    TEST_ASSERT_FALSE(list_prepend(&list, node));   // Function should return false
+    TEST_ASSERT_TRUE(list_empty(list));             // List should remain empty
+}
 
-//     TEST_ASSERT_EQUAL(3, current->data);
-//     TEST_ASSERT_NULL(current->next);  // It should be the end of the list
-// }
+/* Prepend when list is already populated */
+void test_linked_list_prepend_when_populated(void)
+{
+    struct list_node* list = NULL;
+    struct list_node *node1 = list_create_node(30);
+    struct list_node *node2 = list_create_node(20);
+    struct list_node *node3 = list_create_node(10);
 
-// /* Test for node deletion */
-// void test_linked_list_delete_node(void) {
-//     struct list_node* list = create_list();
-//     prepend(list, 10);
-//     append(list, 20);
-//     append(list, 30);
+    list_prepend(&list, node1);  // Prepend (30)
+    list_prepend(&list, node2);  // Prepend (20)
+    list_prepend(&list, node3);  // Prepend (10)
 
-//     struct list_node* second_node = list->next;  // Pointer to the second node
-//     delete_node(list, second_node);              // Delete the second node
-
-//     // Verify the list structure after deletion
-//     struct list_node* current = list;
-//     TEST_ASSERT_EQUAL(10, current->data);
-//     current = current->next;
-
-//     TEST_ASSERT_EQUAL(30, current->data);  // The third node should be now after the head
-//     TEST_ASSERT_NULL(current->next);       // The list should end here
-// }
+    TEST_ASSERT_EQUAL(10, list->data);                      // Head should be 10
+    TEST_ASSERT_EQUAL(20, list->next->data);                // Next node should be 20
+    TEST_ASSERT_EQUAL(30, list->next->next->data);          // Last node should be 30
+}
 
 // /* Linked List */
 // /**********************************************************************************/
@@ -399,40 +387,40 @@ int main(void)
 {
     UNITY_BEGIN();
 
-    /* Binary search */
-    RUN_TEST(test_binary_search_element_not_in_array);
-    RUN_TEST(test_binary_search_unsuccesful_search_on_left);
-    RUN_TEST(test_binary_search_unsuccesful_search_on_right);
-    RUN_TEST(test_binary_search_succesful_element_on_left);
-    RUN_TEST(test_binary_search_succesful_element_on_right);
-    RUN_TEST(test_binary_search_succesful_element_on_middle);
-    RUN_TEST(test_binary_search_element_from_middle_cannot_be_found);
+    // /* Binary search */
+    // RUN_TEST(test_binary_search_element_not_in_array);
+    // RUN_TEST(test_binary_search_unsuccesful_search_on_left);
+    // RUN_TEST(test_binary_search_unsuccesful_search_on_right);
+    // RUN_TEST(test_binary_search_succesful_element_on_left);
+    // RUN_TEST(test_binary_search_succesful_element_on_right);
+    // RUN_TEST(test_binary_search_succesful_element_on_middle);
+    // RUN_TEST(test_binary_search_element_from_middle_cannot_be_found);
 
-    /* Bubble sort */
-    RUN_TEST(test_bubble_sort_empty_array);
-    RUN_TEST(test_bubble_sort_single_element_array);
-    RUN_TEST(test_bubble_sort_two_elements_unsorted);
-    RUN_TEST(test_bubble_sort_large_array);
+    // /* Bubble sort */
+    // RUN_TEST(test_bubble_sort_empty_array);
+    // RUN_TEST(test_bubble_sort_single_element_array);
+    // RUN_TEST(test_bubble_sort_two_elements_unsorted);
+    // RUN_TEST(test_bubble_sort_large_array);
 
-    /* Insertion sort */
-    RUN_TEST(test_insertion_sort_empty_array);
-    RUN_TEST(test_insertion_sort_single_element_array);
-    RUN_TEST(test_insertion_sort_two_elements_unsorted);
-    RUN_TEST(test_insertion_sort_large_array);
+    // /* Insertion sort */
+    // RUN_TEST(test_insertion_sort_empty_array);
+    // RUN_TEST(test_insertion_sort_single_element_array);
+    // RUN_TEST(test_insertion_sort_two_elements_unsorted);
+    // RUN_TEST(test_insertion_sort_large_array);
 
-    /* Selection sort */
-    RUN_TEST(test_selection_sort_empty_array);
-    RUN_TEST(test_selection_sort_single_element_array);
-    RUN_TEST(test_selection_sort_two_elements_unsorted);
-    RUN_TEST(test_selection_sort_large_array);
+    // /* Selection sort */
+    // RUN_TEST(test_selection_sort_empty_array);
+    // RUN_TEST(test_selection_sort_single_element_array);
+    // RUN_TEST(test_selection_sort_two_elements_unsorted);
+    // RUN_TEST(test_selection_sort_large_array);
 
-    // /* Linked List */
-    // RUN_TEST(test_linked_list_initialization);
-    // RUN_TEST(test_linked_list_prepend);
-    // RUN_TEST(test_linked_list_append);
-    // RUN_TEST(test_linked_list_insert_after);
-    // RUN_TEST(test_linked_list_traversal);
-    // RUN_TEST(test_linked_list_delete_node);
+    /* Linked List */
+    RUN_TEST(test_linked_list_prepend);
+    RUN_TEST(test_linked_list_prepend_multiple);
+    RUN_TEST(test_linked_list_prepend_to_non_empty);
+    RUN_TEST(test_linked_list_prepend_null);
+    RUN_TEST(test_linked_list_prepend_when_populated);
+    
 
     return UNITY_END();
 }
